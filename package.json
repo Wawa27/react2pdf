@@ -1,0 +1,27 @@
+{
+  "name": "react2pdf",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "./build/React2Pdf.js",
+  "scripts": {
+    "start": "node --experimental-specifier-resolution=node --loader ts-node/esm src/react.tsx",
+    "build": "tsc",
+    "example:hello_world": "node --experimental-specifier-resolution=node --loader ts-node/esm examples/hello_world.tsx"
+  },
+  "keywords": [
+    "pdf",
+    "react",
+    "html",
+    "css"
+  ],
+  "dependencies": {
+    "puppeteer": "^10.1.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "ts-node": "^10.1.0"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.15",
+    "@types/react-dom": "^17.0.9"
+  }
+}
