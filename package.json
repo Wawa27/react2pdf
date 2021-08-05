@@ -21,6 +21,7 @@
     "ts-node": "^10.1.0"
   },
   "devDependencies": {
+    "@types/node": "^16.4.12",
     "@types/react": "^17.0.15",
     "@types/react-dom": "^17.0.9"
   }

@@ -32,6 +32,17 @@ export default class React2Pdf {
         __classPrivateFieldGet(this, _React2Pdf_pages, "f").length = 0;
         await __classPrivateFieldGet(this, _React2Pdf_browser, "f").close();
     }
+    async renderToStream(format) {
+        __classPrivateFieldSet(this, _React2Pdf_browser, await puppeteer.launch(), "f");
+        const page = await __classPrivateFieldGet(this, _React2Pdf_browser, "f").newPage();
+        let html = await ReactDOMServer.renderToString(_jsx("div", { children: __classPrivateFieldGet(this, _React2Pdf_pages, "f") }, void 0));
+        await page.setContent(html);
+        const pdf = await page.createPDFStream({ format });
+        // clear pages and close browser
+        // this.#pages.length = 0;
+        // await this.#browser.close();
+        return pdf;
+    }
 }
 _React2Pdf_browser = new WeakMap(), _React2Pdf_pages = new WeakMap();
 //# sourceMappingURL=React2Pdf.js.map
