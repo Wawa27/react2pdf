@@ -3,6 +3,9 @@
   "version": "0.3.0",
   "type": "module",
   "main": "./build/React2Pdf.js",
+  "license": "MIT",
+  "repository": "https://github.com/Wawa27/react2pdf.git",
+  "homepage": "https://github.com/Wawa27/react2pdf#readme",
   "scripts": {
     "start": "node --experimental-specifier-resolution=node --loader ts-node/esm src/react.tsx",
     "build": "tsc",

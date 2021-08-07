@@ -2,6 +2,7 @@
 
 THE SIMPLEST AND THE FASTEST PACKAGE TO RENDER PDF WITH REACT. 
 
+
 ## Install
 
 Install with [npm](https://www.npmjs.com/):
