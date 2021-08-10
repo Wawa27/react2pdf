@@ -14,12 +14,19 @@ $ npm i --save react2pdf
 ## Usage 
 
 Import :
+
 ```js
 import React2Pdf from "react2pdf";
 
 const options = {}
 const reactToPdf = new React2Pdf(options);
 ```
+**If you need cjs use this import :**
+```js
+import React2Pdf from "react2pdf/cjs";
+```
+
+
 For options check this [section](#options) 
 
 Generate pdf in the file :
