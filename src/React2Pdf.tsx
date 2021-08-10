@@ -19,7 +19,7 @@ export default class React2Pdf {
         this.#browser = await puppeteer.launch();
         const document = await this.#browser.newPage();
 
-        let html = await ReactDOMServer.renderToString(
+        let html = ReactDOMServer.renderToString(
             <div>
                 {this.#pages}
             </div>

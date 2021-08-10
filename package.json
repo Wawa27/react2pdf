@@ -8,7 +8,7 @@
   "homepage": "https://github.com/Wawa27/react2pdf#readme",
   "scripts": {
     "start": "node --experimental-specifier-resolution=node --loader ts-node/esm src/react.tsx",
-    "build": "tsc",
+    "build": "tsc -p tsconfig.json && tsc -p tsconfig-cjs.json",
     "example:hello_world": "node --experimental-specifier-resolution=node --loader ts-node/esm examples/render.tsx"
   },
   "keywords": [
@@ -20,12 +20,13 @@
   "dependencies": {
     "puppeteer": "^10.1.0",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "ts-node": "^10.1.0"
+    "react-dom": "^17.0.2"
   },
   "devDependencies": {
     "@types/node": "^16.4.12",
     "@types/react": "^17.0.15",
-    "@types/react-dom": "^17.0.9"
+    "@types/react-dom": "^17.0.9",
+    "ts-node": "^10.1.0",
+    "typescript": "^4.3.5"
   }
 }
