@@ -26,7 +26,7 @@ class React2Pdf {
         __classPrivateFieldSet(this, _React2Pdf_pages, [], "f");
     }
     addPage(div) {
-        __classPrivateFieldGet(this, _React2Pdf_pages, "f").push(jsx_runtime_1.jsxs("div", Object.assign({ style: { "pageBreakAfter": "always" } }, { children: [" ", div, " "] }), "page" + __classPrivateFieldGet(this, _React2Pdf_pages, "f").length));
+        __classPrivateFieldGet(this, _React2Pdf_pages, "f").push((0, jsx_runtime_1.jsxs)("div", Object.assign({ style: { "pageBreakAfter": "always" } }, { children: [" ", div, " "] }), "page" + __classPrivateFieldGet(this, _React2Pdf_pages, "f").length));
     }
     async render(path, format) {
         const document = await __classPrivateFieldGet(this, _React2Pdf_instances, "m", _React2Pdf_buildDocument).call(this);
@@ -42,7 +42,7 @@ exports.default = React2Pdf;
 _React2Pdf_browser = new WeakMap(), _React2Pdf_pages = new WeakMap(), _React2Pdf_instances = new WeakSet(), _React2Pdf_buildDocument = async function _React2Pdf_buildDocument() {
     __classPrivateFieldSet(this, _React2Pdf_browser, await puppeteer_1.default.launch(), "f");
     const document = await __classPrivateFieldGet(this, _React2Pdf_browser, "f").newPage();
-    let html = server_1.default.renderToString(jsx_runtime_1.jsx("div", { children: __classPrivateFieldGet(this, _React2Pdf_pages, "f") }, void 0));
+    let html = server_1.default.renderToString((0, jsx_runtime_1.jsx)("div", { children: __classPrivateFieldGet(this, _React2Pdf_pages, "f") }, void 0));
     await document.setContent(html);
     return document;
 }, _React2Pdf_clear = async function _React2Pdf_clear() {
