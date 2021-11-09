@@ -28,9 +28,16 @@ export default class React2Pdf {
         await document.pdf({ path, format });
         await __classPrivateFieldGet(this, _React2Pdf_instances, "m", _React2Pdf_clear).call(this);
     }
-    async renderToStream(format) {
+    async renderToStream(format, options) {
         const document = await __classPrivateFieldGet(this, _React2Pdf_instances, "m", _React2Pdf_buildDocument).call(this);
-        return document.createPDFStream({ format });
+        let pdfStream = await document.createPDFStream({ format });
+        if (options?.autoclose) {
+            pdfStream.on("close", () => this.close());
+        }
+        return pdfStream;
+    }
+    async close() {
+        __classPrivateFieldGet(this, _React2Pdf_browser, "f")?.close();
     }
 }
 _React2Pdf_browser = new WeakMap(), _React2Pdf_pages = new WeakMap(), _React2Pdf_instances = new WeakSet(), _React2Pdf_buildDocument = async function _React2Pdf_buildDocument() {
