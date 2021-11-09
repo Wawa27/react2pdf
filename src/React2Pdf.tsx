@@ -44,12 +44,16 @@ export default class React2Pdf {
         await this.#clear();
     }
 
-    async renderToStream(format: PaperFormat, options: RenderToStreamOptions): Promise<Readable> {
+    async renderToStream(format: PaperFormat, options?: RenderToStreamOptions): Promise<Readable> {
         const document = await this.#buildDocument();
         let pdfStream = await document.createPDFStream({format});
-        if (options.autoclose) {
-            pdfStream.on("close", () => this.#browser?.close());
+        if (options?.autoclose) {
+            pdfStream.on("close", () => this.close());
         }
         return pdfStream;
+    }
+
+    async close(): Promise<void> {
+        this.#browser?.close();
     }
 }
