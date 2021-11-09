@@ -1,6 +1,6 @@
 {
   "name": "react2pdf",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "main": "./build/cjs/React2Pdf.js",
   "module": "./build/React2Pdf.js",
   "license": "MIT",
