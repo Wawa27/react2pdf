@@ -1,14 +1,15 @@
 {
   "name": "react2pdf",
   "version": "0.6.0",
-  "main": "./build/cjs/React2Pdf.js",
+  "main": "./build/React2Pdf.js",
   "module": "./build/React2Pdf.js",
+  "type": "module",
   "license": "MIT",
   "repository": "https://github.com/Wawa27/react2pdf.git",
   "homepage": "https://github.com/Wawa27/react2pdf#readme",
   "scripts": {
     "start": "node --experimental-specifier-resolution=node --loader ts-node/esm src/react.tsx",
-    "build": "tsc -p tsconfig.json && tsc -p tsconfig-cjs.json",
+    "build": "tsc -p tsconfig.json",
     "example:hello_world": "node --experimental-specifier-resolution=node --loader ts-node/esm examples/render.tsx"
   },
   "keywords": [
