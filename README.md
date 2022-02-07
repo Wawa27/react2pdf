@@ -1,3 +1,6 @@
+[![npm version](https://img.shields.io/npm/v/react2pdf)](https://www.npmjs.com/package/react)
+[![npm version](https://img.shields.io/npm/dm/react2pdf)](https://www.npmjs.com/package/react)
+
 # ⚛️ React 2 PDF 📄
 
 THE SIMPLEST AND THE FASTEST PACKAGE TO RENDER PDF WITH REACT. 
