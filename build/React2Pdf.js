@@ -23,14 +23,14 @@ export default class React2Pdf {
     addPage(div) {
         __classPrivateFieldGet(this, _React2Pdf_pages, "f").push(_jsxs("div", Object.assign({ style: { "pageBreakAfter": "always" } }, { children: [" ", div, " "] }), "page" + __classPrivateFieldGet(this, _React2Pdf_pages, "f").length));
     }
-    async render(path, format) {
+    async render(path, format, renderOptions) {
         const document = await __classPrivateFieldGet(this, _React2Pdf_instances, "m", _React2Pdf_buildDocument).call(this);
-        await document.pdf({ path, format });
+        await document.pdf({ path, format, timeout: renderOptions?.timeout });
         await __classPrivateFieldGet(this, _React2Pdf_instances, "m", _React2Pdf_clear).call(this);
     }
     async renderToStream(format, options) {
         const document = await __classPrivateFieldGet(this, _React2Pdf_instances, "m", _React2Pdf_buildDocument).call(this);
-        let pdfStream = await document.createPDFStream({ format });
+        let pdfStream = await document.createPDFStream({ format, timeout: options?.timeout });
         if (options?.autoclose) {
             pdfStream.on("close", () => this.close());
         }

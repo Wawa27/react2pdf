@@ -3,7 +3,11 @@ import ReactDOMServer from "react-dom/server";
 import React from "react";
 import {Readable} from "stream";
 
-type RenderToStreamOptions = {
+type RenderOptions = {
+    timeout?: number;
+}
+
+type RenderToStreamOptions = RenderOptions & {
     autoclose: false
 }
 
@@ -38,15 +42,15 @@ export default class React2Pdf {
         await this.#browser?.close();
     }
 
-    async render(path: string, format: PaperFormat) {
+    async render(path: string, format: PaperFormat, renderOptions?: RenderOptions): Promise<void> {
         const document = await this.#buildDocument();
-        await document.pdf({path, format});
+        await document.pdf({path, format, timeout: renderOptions?.timeout});
         await this.#clear();
     }
 
     async renderToStream(format: PaperFormat, options?: RenderToStreamOptions): Promise<Readable> {
         const document = await this.#buildDocument();
-        let pdfStream = await document.createPDFStream({format});
+        let pdfStream = await document.createPDFStream({format, timeout: options?.timeout});
         if (options?.autoclose) {
             pdfStream.on("close", () => this.close());
         }
