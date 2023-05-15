@@ -1,10 +1,9 @@
 [![npm version](https://img.shields.io/npm/v/react2pdf)](https://www.npmjs.com/package/react)
 [![npm version](https://img.shields.io/npm/dm/react2pdf)](https://www.npmjs.com/package/react)
 
-# ⚛️ React 2 PDF 📄
+# ⚛️ React2Pdf 📄
 
-THE SIMPLEST AND THE FASTEST PACKAGE TO RENDER PDF WITH REACT. 
-
+React2Pdf is a library that allows you to generate pdf from React components in NodeJS.
 
 ## Install
 
@@ -24,24 +23,19 @@ import React2Pdf from "react2pdf";
 const options = {}
 const reactToPdf = new React2Pdf(options);
 ```
-**If you need cjs use this import :**
-```js
-import React2Pdf from "react2pdf/cjs";
-```
-
 
 For options check this [section](#options) 
 
-Generate pdf in the file :
+Generate a pdf and save it to a file :
 
 ```jsx
     // Generate pdf
     const reactToPdf = new React2Pdf();
-    reactToPdf.addPage(<h1>HELLO WORLD</h1>)
-    const pdfStream = await reactToPdf.render("./examples/pdfExample","a4");
+    reactToPdf.addPage(<h1>Hello world</h1>)
+    const pdfStream = await reactToPdf.render("./examples/pdfExample", "a4");
 ```
 
-Generate pdf with API Express route :
+Generate a pdf with express :
 
 ```js
 import Router from "express";
@@ -50,11 +44,11 @@ import React2Pdf from "react2pdf";
 
 const router = Router();
 
-router.get("/testPdf", async (req, res) => {
+router.get("/pdf", async (req, res) => {
     const reactToPdf = new React2Pdf();
-	reactToPdf.addSinglePage(
+	reactToPdf.addPage(
 		<h1 style={{ height: "200px", background: "blue" }}>
-			Hello , Nico fdsjhfksdkhf{" "}
+			Hello world !
 		</h1>
 	);
 	const pdfStream = await reactToPdf.renderToStream("a4");
@@ -63,13 +57,3 @@ router.get("/testPdf", async (req, res) => {
 	stream.on("end", () => console.log("Done streaming, response sent."));
 });
 ```
-
-## Options
-
-|options name | required | type | default value | description |
-|---|---|----|----|----|
-| xxx | xxx | xxx | xxx | xxx |
-
-
-
-## About
