@@ -1,15 +1,15 @@
 {
   "name": "react2pdf",
   "version": "1.2.0",
-  "main": "./build/React2Pdf.js",
-  "module": "./build/React2Pdf.js",
   "type": "module",
+  "module": "build/React2Pdf.js",
+  "main": "build/React2Pdf.cjs",
   "license": "MIT",
   "repository": "https://github.com/Wawa27/react2pdf.git",
   "homepage": "https://github.com/Wawa27/react2pdf#readme",
   "scripts": {
     "start": "node --experimental-specifier-resolution=node --loader ts-node/esm src/react.tsx",
-    "build": "tsc -p tsconfig.json",
+    "build": "rollup --config rollup.config.mjs",
     "example:hello_world": "node --experimental-specifier-resolution=node --loader ts-node/esm examples/render.tsx"
   },
   "keywords": [
@@ -24,10 +24,13 @@
     "react-dom": "^17.0.2"
   },
   "devDependencies": {
+    "rollup": "^3.21.7",
+    "@rollup/plugin-typescript": "^11.1.1",
     "@types/node": "^16.11.7",
     "@types/react": "^17.0.34",
     "@types/react-dom": "^17.0.11",
     "ts-node": "^10.4.0",
+    "tslib": "^2.5.0",
     "typescript": "^4.4.4"
   }
 }
