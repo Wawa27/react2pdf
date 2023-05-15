@@ -1,6 +1,6 @@
 {
   "name": "react2pdf",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "type": "module",
   "module": "build/React2Pdf.js",
   "main": "build/React2Pdf.cjs",
