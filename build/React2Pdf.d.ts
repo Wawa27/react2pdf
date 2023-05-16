@@ -1,10 +1,8 @@
 /// <reference types="node" />
-import { PaperFormat } from "puppeteer";
+import { PaperFormat, PDFOptions } from 'puppeteer';
 import { Readable } from "stream";
-declare type RenderOptions = {
-    timeout?: number;
-};
-declare type RenderToStreamOptions = RenderOptions & {
+type RenderOptions = PDFOptions;
+type RenderToStreamOptions = RenderOptions & {
     autoclose: false;
 };
 export default class React2Pdf {
