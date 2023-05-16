@@ -1,11 +1,9 @@
-import puppeteer, {Browser, Page, PaperFormat} from "puppeteer";
+import puppeteer, { Browser, Page, PaperFormat, PDFOptions } from 'puppeteer'
 import ReactDOMServer from "react-dom/server";
 import React from "react";
 import {Readable} from "stream";
 
-type RenderOptions = {
-    timeout?: number;
-}
+type RenderOptions = PDFOptions;
 
 type RenderToStreamOptions = RenderOptions & {
     autoclose: false
@@ -44,7 +42,7 @@ export default class React2Pdf {
 
     async render(path: string, format: PaperFormat, renderOptions?: RenderOptions): Promise<void> {
         const document = await this.#buildDocument();
-        await document.pdf({path, format, timeout: renderOptions?.timeout});
+        await document.pdf({path, format, ...renderOptions});
         await this.#clear();
     }
 

@@ -1,4 +1,3 @@
-/// <reference types="react" />
 /// <reference types="node" />
 import { PaperFormat } from "puppeteer";
 import { Readable } from "stream";
