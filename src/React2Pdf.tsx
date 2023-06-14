@@ -1,4 +1,10 @@
-import puppeteer, { Browser, Page, PaperFormat, PDFOptions } from "puppeteer";
+import puppeteer, {
+  Browser,
+  Page,
+  PaperFormat,
+  PDFOptions,
+  Product,
+} from "puppeteer";
 import ReactDOMServer from "react-dom/server";
 import React from "react";
 import { Readable } from "stream";
@@ -10,7 +16,7 @@ type RenderToStreamOptions = RenderOptions & {
 };
 
 type React2PdfOptions = {
-  product: "firefox" | "chrome";
+  product: Product;
 };
 
 export default class React2Pdf {
