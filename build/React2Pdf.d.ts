@@ -1,5 +1,5 @@
 /// <reference types="node" />
-import { PaperFormat, PDFOptions } from 'puppeteer';
+import { PaperFormat, PDFOptions } from "puppeteer";
 import { Readable } from "stream";
 type RenderOptions = PDFOptions;
 type RenderToStreamOptions = RenderOptions & {
